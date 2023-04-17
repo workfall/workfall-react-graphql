@@ -49,7 +49,7 @@ const ListUsers: FunctionComponent<ListUsersProps> = () => {
     const { loading, error, data } = useQuery(GET_USERS);
     
     let newUser: any = null;
-    let aggregatedData = [...data.getUsers];
+    let aggregatedData = [...data?.getUsers || []];
     {
         const { data } = useSubscription(
             NEW_USER,
